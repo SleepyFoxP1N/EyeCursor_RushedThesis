@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="33"
+        tools:ignore="GradleOverrides" />
+    <!-- For Flashlight -->
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <!-- For using the camera -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <!-- For logging solution events -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- For floating widget -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="EyeCursor"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name="com.google.mediapipe.examples.facemesh.PointerDwellTimeModule"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            android:parentActivityName="com.google.mediapipe.examples.facemesh.SettingModules" />
+        <activity
+            android:name="com.google.mediapipe.examples.facemesh.PointerAccelerationModule"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            android:parentActivityName="com.google.mediapipe.examples.facemesh.SettingModules" />
+        <activity
+            android:name="com.google.mediapipe.examples.facemesh.PointerThresholdModule"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            android:parentActivityName="com.google.mediapipe.examples.facemesh.SettingModules" />
+        <activity
+            android:name="com.google.mediapipe.examples.facemesh.PointerSizeModule"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            android:parentActivityName="com.google.mediapipe.examples.facemesh.SettingModules" />
+        <activity
+            android:name="com.google.mediapipe.examples.facemesh.PointerSmoothingModule"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            android:parentActivityName="com.google.mediapipe.examples.facemesh.SettingModules" />
+        <activity
+            android:name="com.google.mediapipe.examples.facemesh.PointerSpeedModule"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            android:parentActivityName="com.google.mediapipe.examples.facemesh.SettingModules" />
+        <activity
+            android:name="com.google.mediapipe.examples.facemesh.SettingModules"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            android:parentActivityName="com.google.mediapipe.examples.facemesh.MainActivity" />
+        <activity
+            android:name="com.google.mediapipe.examples.facemesh.PermissionList"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            android:parentActivityName="com.google.mediapipe.examples.facemesh.MainActivity" />
+        <activity
+            android:name="com.google.mediapipe.examples.facemesh.UserLicenseAgreement"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            android:parentActivityName="com.google.mediapipe.examples.facemesh.MainActivity" />
+        <activity
+            android:name="com.google.mediapipe.examples.facemesh.MainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="com.google.mediapipe.examples.facemesh.OverlayWidgetsService"
+            android:enabled="true" />
+        <service
+            android:name="com.google.mediapipe.examples.facemesh.FloatingCamera_Front"
+            android:enabled="true"  />
+        <service
+            android:name="io.hamed.floatinglayout.service.FloatingService" />
+        <service
+            android:name="com.google.mediapipe.examples.facemesh.GlobalActionAccessabilityService"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/global_action_bar_service" />
+        </service>
+    </application>
+</manifest>
