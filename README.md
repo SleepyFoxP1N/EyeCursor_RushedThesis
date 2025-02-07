@@ -12,4 +12,4 @@ By integrating this codebase, our project benefits from advanced AI capabilities
 
 - - - -
 
-### **Photos:** [Here](https://github.com/SleepyFoxP1N/EyeCursor_AllCodesDumpFolder.git}
+### **Photos:** [Here](https://github.com/SleepyFoxP1N/EyeCursor_AllCodesDumpFolder.git)
